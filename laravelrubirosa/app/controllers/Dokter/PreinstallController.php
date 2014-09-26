@@ -9,7 +9,7 @@ class PreinstallController extends BaseController {
 		$this->instalTipeKantorBPJS();
 		$this->instalJaskes();
 		$this->instalKantorBPJS();
-		
+		return "Finish";
 	}
 	
 	public function instalTipeFaskes(){
@@ -69,7 +69,7 @@ class PreinstallController extends BaseController {
 				$jaskes->save();
 			}
 			catch(Exception $e){
-			
+				return $e;
 			}
 		}
 

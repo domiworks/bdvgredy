@@ -21,7 +21,7 @@ Route::get('/login', function()
 //bagian depan website yang dilihat oleh tamu
 Route::group(['prefix' => ''], function()
 {
-	Route::get('/install', ['as' => 'install', 'uses' => 'PreinstallController@instalKantorBPJS']);
+	Route::get('/install', ['as' => 'install', 'uses' => 'PreinstallController@install']);
 });
 
 //admin panel route sementara
