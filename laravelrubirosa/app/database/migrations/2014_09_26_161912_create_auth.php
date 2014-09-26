@@ -51,7 +51,7 @@ class CreateAuth extends Migration {
             $table->string('jalan');
             $table->string('kota');
 			$table->date('tanggal_lahir');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->string('spesialisasi');
 			
 			/*
@@ -123,30 +123,7 @@ class CreateAuth extends Migration {
 			
         });
 		
-		Schema::table('tunggu_pasien', function (Blueprint $table) {
-            $table->create();
-            $table->increments('id');
-            $table->integer('id_dokter')->unsigned();
-            $table->integer('id_pasien')->unsigned();
-			$table->date('tanggal');
-			$table->time('jam');
-			
-			/*
-			
-				Foreign
-			
-			*/
-			
-			$table->foreign('id_dokter')->references('id')->on('dokter');
-			$table->foreign('id_pasien')->references('id')->on('pasien');
-			
-			/*
-			
-				End of foreign
-			
-			*/
-			
-        });
+		
 		
 		Schema::table('tipe_jaskes', function (Blueprint $table) {
             $table->create();
@@ -169,14 +146,14 @@ class CreateAuth extends Migration {
             $table->integer('tipe')->unsigned();
 			$table->string('nama');
 			$table->string('alamat');
-			$table->string('kabupaten');
-			$table->string('kecamatan');
+			$table->string('kabupaten')->nullable();
+			$table->string('kecamatan')->nullable();
 			$table->string('kota');
-			$table->string('telepon');
+			$table->string('telepon')->nullable();
 			$table->integer('divre');
-			$table->string('class');
-			$table->string('long');
-			$table->string('lat');
+			$table->string('kelas')->nullable();
+			$table->string('long')->nullable();
+			$table->string('lat')->nullable();
 			
 			/*
 			
@@ -192,6 +169,33 @@ class CreateAuth extends Migration {
 			*/
         });
 		
+		Schema::table('tunggu_pasien', function (Blueprint $table) {
+            $table->create();
+            $table->increments('id');
+            $table->integer('id_dokter')->unsigned();
+            $table->integer('id_pasien')->unsigned();
+            $table->integer('id_jaskes')->unsigned();
+			$table->date('tanggal');
+			$table->time('jam');
+			
+			/*
+			
+				Foreign
+			
+			*/
+			
+			$table->foreign('id_dokter')->references('id')->on('dokter');
+			$table->foreign('id_pasien')->references('id')->on('pasien');
+			$table->foreign('id_jaskes')->references('id')->on('jaskes');
+			
+			/*
+			
+				End of foreign
+			
+			*/
+			
+        });
+		
 		Schema::table('kantor_bpjs', function (Blueprint $table) {
             $table->create();
             $table->increments('id');
@@ -199,12 +203,12 @@ class CreateAuth extends Migration {
 			$table->string('cabang');
 			$table->string('alamat');
 			$table->string('kota');
-			$table->string('zip');
-			$table->string('telepon');
-			$table->string('fax');
-			$table->integer('hotline');
-			$table->string('long');
-			$table->string('lat');
+			$table->string('zip')->nullable();
+			$table->string('telepon')->nullable();
+			$table->string('fax')->nullable();
+			$table->integer('hotline')->nullable();
+			$table->string('long')->nullable();
+			$table->string('lat')->nullable();
 			
 			/*
 			
