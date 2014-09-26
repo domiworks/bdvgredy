@@ -153,6 +153,8 @@ class CreateAuth extends Migration {
 			$table->string('kelas')->nullable();
 			$table->string('long')->nullable();
 			$table->string('lat')->nullable();
+			$table->tinyInteger('ugd')->nullable();
+			
 			
 			/*
 			
@@ -248,6 +250,38 @@ class CreateAuth extends Migration {
 			
 			*/
 			
+        });
+		
+		Schema::table('review', function (Blueprint $table) {
+            $table->create();
+            $table->increments('id');
+            $table->integer('id_pasien')->unsigned();
+            $table->integer('id_fasilitas')->unsigned();
+			$table->integer('rating');
+			$table->longText('review');
+			
+			/*
+			
+				Foreign
+			
+			*/
+			
+			$table->foreign('id_pasien')->references('id')->on('pasien');
+			$table->foreign('id_fasilitas')->references('id')->on('jaskes');
+			
+			/*
+			
+				End of foreign
+			
+			*/
+			
+        });
+		
+		Schema::table('taxi', function (Blueprint $table) {
+            $table->create();
+            $table->increments('id');
+            $table->string('nama');
+            $table->string('telepon');
         });
 	}
 
