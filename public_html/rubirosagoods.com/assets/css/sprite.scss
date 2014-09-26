@@ -1,0 +1,97 @@
+@mixin dimension($val, $vil){
+	width: $val;
+	height: $vil;
+}
+
+@mixin box-sizing($val){
+    box-sizing: $val;  
+    -moz-box-sizing: $val; /*Firefox 1-3*/  
+    -webkit-box-sizing: $val; /* Safari */  
+}
+
+@function substraction($some-number, $another-number){
+  @return $some-number + $another-number
+}
+
+@mixin transition ($val){
+	-webkit-transition: all ease-in-out $val;
+    -moz-transition: all ease-in-out $val;
+    -o-transition: all ease-in-out $val;
+    transition: all ease-in-out $val;
+}
+
+@mixin border-radius($val){
+	-webkit-border-radius: $val;
+    -moz-border-radius: $val;
+    -o-border-radius: $val;
+    border-radius: $val;
+}
+ 
+
+
+.sprite {
+	background-image: url('../img/sprite.png');
+}
+
+/*------- hi-dpi resolution -------*/
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+  .sprite {
+		background-image: url('../img/sprite@2x.png'); /*sprt@2x.png*/
+		background-size: 402px 121px;/* This replicates the original standard sprite dimensions, 
+		and assumes the actual dimensions of sprt@2x.png are 1012x148px */
+	}
+}
+
+@mixin sprite_1x($x, $y, $w, $h){
+	background-position: $x $y;
+	@include dimension($w, $h);
+	display: block;
+	
+	/*------- hi-dpi resolution -------*/
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (   min--moz-device-pixel-ratio: 2),
+	only screen and (     -o-min-device-pixel-ratio: 2/1),
+	only screen and (        min-device-pixel-ratio: 2),
+	only screen and (                min-resolution: 192dpi),
+	only screen and (                min-resolution: 2dppx) { 
+	    
+		background-position: $x $y;
+		@include dimension($w, $h);
+		display: block;
+	}
+}
+
+.header_logo {
+	@include sprite_1x(-269px, 0px, 133px, 22px);
+}
+
+.quomark_o {
+	@include sprite_1x(-43px, 0px, 18px, 13px);
+}
+
+.quomark_c {
+	@include sprite_1x(-43px, -13px, 18px, 13px);
+}
+
+.pu_close {
+	@include sprite_1x(-61px, 0px, 32px, 32px);
+	float:right;
+	margin-top: 20px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.menu_mob {
+	@include sprite_1x(-93px, 0px, 88px, 88px);
+}
+
+.menu_list {
+	@include sprite_1x(-269px, -33px, 88px, 88px);
+}

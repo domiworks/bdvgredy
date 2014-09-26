@@ -1,0 +1,1314 @@
+/*-------------------------------------------------------------------------------------------------------------
+-------------------------------------------- Rubirosa SCSS ----------------------------------------------------
+--------------------------------------------
+---------------------------- By Dominikus Dwipranarko and Raditya Pradipta	---------------------------------*/
+
+@mixin dimension($val, $vil){
+	width: $val;
+	height: $vil;
+}
+
+@mixin box-sizing($val){
+    box-sizing: $val;  
+    -moz-box-sizing: $val; /*Firefox 1-3*/  
+    -webkit-box-sizing: $val; /* Safari */  
+}
+
+@function substraction($some-number, $another-number){
+  @return $some-number + $another-number
+}
+
+@mixin transition ($val){
+	-webkit-transition: all ease-in-out $val;
+    -moz-transition: all ease-in-out $val;
+    -o-transition: all ease-in-out $val;
+    transition: all ease-in-out $val;
+} 
+ 
+@mixin border-radius($val){
+	-webkit-border-radius: $val;
+    -moz-border-radius: $val;
+    -o-border-radius: $val;
+    border-radius: $val;
+}
+  
+$green: #228b22;
+$green_line: #8bc08b;
+$text_clr: #353535;
+$hover_blk: #1f1f1f;
+$brown: #b57b15;
+
+/*-------------------------------------------------------------------------------------------------------------
+-------------------------------------------- 960gs ------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------*/
+
+@media only screen 
+	and (min-device-width: 320px) 
+	and (max-device-width: 640px)
+	
+	{ 
+
+body {
+ // min-width: 640px; 568
+ width: 640px;
+}
+
+/*
+  Modified 960 Grid System ~ Core CSS.
+  Learn more ~ http://960.gs/
+
+  Licensed under GPL and MIT.
+*/
+
+/* `Container
+----------------------------------------------------------------------------------------------------*/
+
+.c_12 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+/* `Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+
+.g_1,.g_2,.g_3,.g_4,.g_5,.g_6,.g_7,.g_8,.g_9,.g_10,.g_11,.g_12 {
+  display: inline;
+  float: left;
+  margin-left: percentage(10/960);
+  margin-right: percentage(10/960);
+}
+
+.g_ex_1,.g_ex_2,.g_ex_3,.g_ex_4,.g_ex_5,.g_ex_6,.g_ex_7,.g_ex_8,.g_ex_9,.g_ex_10,.g_ex_11,.g_ex_12 {
+  display: inline;
+  float: left;
+  padding-left: percentage(10/960);
+  padding-right: percentage(10/960);
+}
+ 
+.push_1, .pull_1,.push_2, .pull_2,.push_3, .pull_3,.push_4, .pull_4,.push_5, .pull_5,.push_6, .pull_6,.push_7, .pull_7,.push_8, .pull_8,.push_9, .pull_9,.push_10, .pull_10,.push_11, .pull_11 {
+  position: relative;
+}
+
+/* `Grid >> Children (Alpha ~ First, Omega ~ Last)
+----------------------------------------------------------------------------------------------------*/
+
+.alpha {
+  margin-left: 0;
+}
+ 
+.omega {
+  margin-right: 0;
+}
+
+/* `Grid >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.c_12 .g_1 {
+  width: percentage(60/960);
+}
+
+.c_12 .g_2 {
+  width: percentage(140/960);
+}
+
+.c_12 .g_3 {
+  width: percentage(220/960);
+}
+
+.c_12 .g_4 {
+  width: percentage(300/960);
+}
+
+.c_12 .g_5 {
+  width: percentage(380/960);
+}
+
+.c_12 .g_6 {
+  width: percentage(460/960);
+}
+
+.c_12 .g_7 {
+  width: percentage(540/960);
+}
+
+.c_12 .g_8 {
+  width: percentage(620/960);
+}
+
+.c_12 .g_9 {
+  width: percentage(700/960);
+}
+
+.c_12 .g_10 {
+  width: percentage(780/960);
+}
+
+.c_12 .g_11 {
+  width: percentage(860/960);
+}
+
+.c_12 .g_12 {
+  width: percentage(940/960);
+}
+
+.c_12 .g_ex_1 {
+  width: percentage(80/960);
+  @include box-sizing(border-box);
+}
+
+.c_12 .g_ex_2 {
+  width: percentage(160/960);
+  @include box-sizing(border-box);
+}
+
+.c_12 .g_ex_3 {
+  width: percentage(240/960);
+  @include box-sizing(border-box);
+}
+
+.c_12 .g_ex_4 {
+  width: percentage(320/960);
+  @include box-sizing(border-box);
+}
+ 
+.c_12 .g_ex_5 {
+  width: percentage(400/960);
+  @include box-sizing(border-box);
+}
+
+.c_12 .g_ex_6 {
+  width: percentage(480/960);
+  @include box-sizing(border-box);
+}
+
+.c_12 .g_ex_7 {
+  width: percentage(560/960);
+  @include box-sizing(border-box);
+}
+
+.c_12 .g_ex_8 {
+  width: percentage(640/960);
+  @include box-sizing(border-box);
+}
+
+.c_12 .g_ex_9 {
+  width: percentage(720/960);
+  @include box-sizing(border-box);
+}
+
+.c_12 .g_ex_10 {
+  width: percentage(800/960);
+  @include box-sizing(border-box);
+}
+
+.c_12 .g_ex_11 {
+  width: percentage(880/960);
+  @include box-sizing(border-box);
+}
+
+.c_12 .g_ex_12 {
+  width: percentage(960/960);
+  @include box-sizing(border-box);
+}
+
+
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+
+.clearfix:before,
+.clearfix:after,
+.c_12:before,
+.c_12:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after,
+.c_12:after {
+  clear: both;
+}
+
+/*
+  The following zoom:1 rule is specifically for IE6 + IE7.
+  Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.clearfix,
+.c_12 {
+  zoom: 1;
+}
+
+/*-------------------------------------------------------------------------------------------------------------
+-------------------------------------------- Styling Starts Here ----------------------------------------------
+-------------------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------Navigation Section------------------------------------ DEKSTOP */
+
+#nav_sec {
+	width: 600px;
+	position: fixed;
+	display: block;
+	z-index: 99999; //most top
+	margin-left:-600px;
+	top:0px;
+	
+	#menu_area {
+		@include dimension(512px, inherit);
+		background-color: #998675;
+		display: block; 
+		float: left;
+		overflow: hidden;
+	}
+	
+	#closer_area {
+		@include dimension(88px, inherit);
+		background-color: transparent;
+		display: block;
+		//background-color: rgba(0,0,0,0.4);
+		
+		float: left;
+	}
+	
+	ul {
+		li {
+			a { 
+				color: #fff;
+				width: 100%;
+				line-height: 120px;
+				display: block;
+				font-size: 32px;
+				text-indent: 80px;
+			}
+			
+		}
+		li:active {
+			a {
+				color: #fff;
+				width: 100%;
+				line-height: 120px;
+				display: block;
+				font-size: 32px;
+				text-indent: 80px;
+				background: #635348;
+			}
+			
+		}
+		
+	}
+	
+	
+}
+
+
+#listnav_sec {
+	width: 600px;  
+	position: fixed;
+	display: block;
+	z-index: 99999; //most top
+	margin-left:640px;
+	top:0px;
+	
+	#menu_area {
+		@include dimension(512px, inherit);
+		background-color: #fff;
+		display: block; 
+		float: left;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+	
+	#closer_area {
+		@include dimension(88px, inherit);
+		background-color: transparent;
+		display: block;
+		
+		float: left;
+	}
+	
+	ul {
+		li {
+			a {
+				color: #fff;
+				width: 100%;
+				line-height: 120px;
+				display: block;
+				font-size: 32px;
+				text-indent: 80px;
+			}
+			
+		}
+		li:active {
+			a {
+				color: #fff;
+				width: 100%;
+				line-height: 120px;
+				display: block;
+				font-size: 32px;
+				text-indent: 80px;
+				background: #635348;
+			}
+			
+		}
+		
+	}
+	
+	
+}
+
+#mob_head {
+	@include dimension(100%, 88px);
+	display: block;
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	z-index:9999;//hyper top
+	overflow: hidden;
+	top:0px;
+	
+	#menu_trig {
+		@include dimension(88px, 88px);
+		//background-color: #151311;
+		display: block;
+		position: absolute;
+		top:0;
+		left:0;
+	}
+	
+	#listmenu_trig {
+		@include dimension(88px, 88px);
+		//background-color: #151311;
+		display: block;
+		position: absolute;
+		top:0;
+		right:0;
+	}
+	
+	.openslideblog {
+		background: url('../img/pu_bloglist.svg') no-repeat;
+	}
+	
+	.openslide {
+		background: url('../img/pu_slide.svg') no-repeat;
+	}
+	
+	.closeslide {
+		background: url('../img/pu_closeslide.svg') no-repeat !important;
+	}
+	
+	
+	.head_addr {
+		@include dimension(100%, 88px);
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		line-height: 88px;
+		font-family: pn_light;
+		text-transform: uppercase;
+		text-align: center;
+		color: #fff;
+		font-size: 26px;
+	}
+	
+}
+
+/*--------------------------------------------Landing Section------------------------------------ DEKSTOP */
+
+#landing_sec{
+	
+	position: relative;
+	background: url('../img/landing_bg.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	z-index: -2;
+	
+	.landing_spc{
+		
+		margin-top:120px; //80px;
+		
+	}
+	
+	.rubirosa_logo_center {
+	
+		position: fixed;
+		width: 100%;
+		z-index: -1;
+		text-align: center;
+		left: 0px;
+		margin-top: 140px;
+		
+		.logo_center{
+			
+			display: block;
+			background: url('../img/rubirosa_landing.png') no-repeat;
+			width: 260px;
+			height: 46px;
+			margin-left: auto;
+			margin-right: auto;
+					
+		}
+	}
+	
+	
+}
+
+/*--------------------------------------------Story Section------------------------------------ DEKSTOP */
+
+#story_sec {
+	position: relative;
+	padding: 100px 0px 100px 0px;
+	background: #fff;
+}
+
+.quote_o {
+	margin-bottom: 20px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.quote_cntnt {
+	font-size: 24px;
+	font-style: italic;
+	text-align: center;
+}
+
+.quote_c {
+	margin-top: 20px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------Main Category Section------------------------------------ DEKSTOP */
+#main_cat_sec {
+	position: relative;
+	background-color: #eeebe8;
+	
+	#mc_men {
+		background: url('../img/mc_men.jpg') no-repeat center center ;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	
+	#mc_unisex {
+		background: url('../img/mc_unisex.jpg') no-repeat center center ;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	
+	#mc_women {
+		background: url('../img/mc_women.jpg') no-repeat center center ;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	.main_cat_node {
+		height: inherit;
+		display: block;
+		float: left;
+		
+		/*a {
+			display: block;
+			@include dimension(inherit, inherit);
+			
+			&:hover {
+				background: rgba(0,0,0,0.7);
+				@include transition(0.20s);		
+				
+				.main_cat_title {
+					color: #fff;
+					@include transition(0.20s);		
+				}
+			}
+		}*/
+		
+		a {
+			display: block;
+			@include dimension(inherit, inherit);
+			background: rgba(0,0,0,0.7);
+			
+			.main_cat_title {
+				color: #fff;
+			}
+			
+			&:hover {
+				@include transition(0.20s);		
+				background: none;
+				
+				.main_cat_title {
+					color: #232323;
+					@include transition(0.20s);		
+				}
+			}
+		}
+		
+		
+	}
+	
+	
+}
+
+.main_cat_title {
+	font-family: pn_semibold;
+	font-size: 60px;
+	line-height: 60px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/*--------------------------------------------Cleaning Tips Section------------------------------------ DEKSTOP */
+
+#cleantips_sec {
+	position: relative;
+
+	background-color: #fff;
+	
+	.left_spc {
+		@include dimension(100%, auto);
+		float: left;
+		display: block;
+		position: relative;
+	}
+	
+	.cleantips_thumb {
+		background: url('../img/cleantips_thumb.jpg') no-repeat center center ;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		
+		.cleantips_thumb_intr {
+			background-color: rgba(168,0,0,0.5);
+			@include dimension(100%, inherit);
+			display: block;
+		} 
+	}
+		
+	.right_spc {
+		@include dimension(100%, auto);
+		float: left;
+		display: block;
+		position: relative;
+	}
+	
+	
+}
+
+/*--------------------------------------------Blog Section------------------------------------  */
+
+#blog_sec {
+	position: relative;
+	background: #eeebe8;
+	
+	.left_spc {
+		@include dimension(100%, auto);
+		float: left;
+		display: block;
+		position: relative;
+		background: #eeebe8;
+	}
+	
+	.blog_thumb {
+		background: url('../img/blog_thumb.jpg') no-repeat center center ;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		
+		.blog_thumb_intr {
+			background-color: rgba(188,152,123,0.5);
+			@include dimension(100%, inherit);
+			display: block;
+		} 
+	}
+	
+	.title {
+		margin: 100px 14% 0 14%;
+		text-align: left;
+	}
+	
+	.lts_blog_title{
+		margin: 100px 14% 0 14%;
+		font-size: 24px;
+		text-align: left;
+	}
+	.lts_blog_date {
+		margin: 0px 14% 0 14%;
+		text-align: left;
+		color: #989898;
+	}
+	.lts_blog_content {
+		margin: 80px 14% 0 14%;
+		text-align: justify;
+	}
+	
+	.button_main_blog {
+		margin: 100px 14% 0 14%;
+		float: left;
+	}
+	
+	.right_spc {
+		@include dimension(100%, auto);
+		float: left;
+		display: block;
+		position: relative;
+	}
+	
+	
+}
+
+/*--------------------------------------------Product List Section------------------------------------ DEKSTOP 
+
+#product_list_sec{
+	
+	display:block;
+	margin-top:80px;
+	background-color:#fff;
+	overflow-x:auto;
+	overflow-y:hidden;
+}
+
+
+.product_col2{
+	display:inline-block;
+	position:relative; 
+	height:inherit;
+		
+	&:not(:nth-child(1)){
+		display:inline-block;
+		position:relative;
+		height:inherit;
+		margin-left: -5px;
+		
+	}
+}
+
+.product_node{
+	display:block;
+	position:relative;
+	background-color:#fff;
+	//border-left:1px #fff solid;
+	border-top:1px #e5e5e5 solid;
+	border-right:1px #e5e5e5 solid;
+	border-bottom:1px #e5e5e5 solid;
+	
+	&:hover .product_node_hvr {
+	
+		display: block;
+		background-color:rgba(0, 0, 0, 0.45);
+		width:inherit;
+		height:inherit;
+		position:absolute;
+		top:0;
+		left:0;
+		@include transition(200ms);
+		
+		.look_closer{
+			opacity: 1;
+			width:100px;
+			height:100px;
+			display:block;
+			margin:auto;
+			border:2px #fff solid;
+			border-radius:999px;
+			-webkit-border-radius:999px;
+			-moz-border-radius:999px;
+			-o-border-radius:999px;
+			-ms-border-radius:999px;		@include transition(200ms);
+
+		}
+			.look_closer_txt{
+			opacity: 1;
+				color:#fff;
+				text-align:center;
+				line-height:20px;
+				margin-top:28px;		@include transition(200ms);
+
+			}
+	}
+	
+	.product_node_hvr{
+		background-color:rgba(0, 0, 0, 0.0);
+		width:inherit;
+		height:inherit;
+		position:absolute;
+		top:0;
+		left:0;
+		
+	
+		.look_closer{
+			opacity: 0;
+			width:100px;
+			height:100px;
+			display:block;
+			margin:auto;
+			border:2px #fff solid;
+			border-radius:999px;
+			-webkit-border-radius:999px;
+			-moz-border-radius:999px;
+			-o-border-radius:999px;
+			-ms-border-radius:999px;
+		}
+			.look_closer_txt{
+			opacity: 0;
+				color:#fff;
+				text-align:center;
+				line-height:20px;
+				margin-top:28px;
+			}
+	}
+	
+	
+	.item_image{
+		display:block;
+		background-color:red;
+		width:inherit;
+		height:inherit;
+		margin:auto;
+	}
+
+	.item_info{
+		position:absolute;
+		bottom:20px;
+		left:30px;
+		display:block;
+		
+		.item_cat{
+			color:#898989;
+			font-size:18px;
+			display: block;
+			
+			@media all and (max-height: 999px){
+				color:#898989;
+				font-size:16px;
+				display: block;
+			}
+		}
+		
+		.item_title{
+			color:#232323;
+			font-size:24px;
+			font-family:pn_semibold;
+			display: block;
+			
+			@media all and (max-height: 999px){
+				color:#232323;
+				font-size:18px;
+				font-family:pn_semibold;
+				display: block;
+			}
+		}
+		
+		.item_price{
+			color:#898989;
+			font-size:24px;
+			font-family:pn_semibold;
+			text-transform:uppercase;
+			display: block;
+			
+			@media all and (max-height: 999px){
+				color:#898989;
+				font-size:18px;
+				font-family:pn_semibold;
+				text-transform:uppercase;
+				display: block;
+			}
+		}
+	}
+}*/
+
+
+/*--------------------------------------------General Functions------------------------------------*/
+
+.title {
+	font-family: pn_semibold;
+	font-size: 48px;
+	text-transform: uppercase;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	line-height: 48px;
+}
+
+.subtitle {
+	font-family: pn_semibold;
+	font-size: 36px;
+	text-transform: uppercase;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	line-height: 36px;
+}
+
+.title_desc {
+	text-align: center;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+
+.tableed{
+	
+	display: table;
+	width: 100%;
+	height: inherit;
+	
+	.celled{
+		
+		@include dimension(100%, inherit);
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		position: relative;
+	}
+}
+
+/*--------------------------------------------Image Party------------------------------------*/
+
+.m_mis {
+	background: url('../img/m_mis.svg') no-repeat;
+	@include dimension(116px, 134px);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	
+	@media all and (max-width: 1599px) {
+		background: url('../img/m_mis.svg') no-repeat;
+		@include dimension(100px, 116px);
+		background-size: 100px 116px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.v_mis {
+	background: url('../img/v_mis.svg') no-repeat;
+	@include dimension(116px, 134px);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	
+	@media all and (max-width: 1599px) {
+		background: url('../img/v_mis.svg') no-repeat;
+		@include dimension(100px, 116px);
+		background-size: 100px 116px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+
+/*---------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------Category List Page ------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+
+#category_list_sec {
+	position: relative;
+	width: 640px;
+	display: block;
+	margin-top: 88px;
+	
+	.category_col2vert {
+		display: block;
+		@include dimension(100%, 360px);
+		border-bottom:2px #e5e5e5 solid;
+		
+		.category_node {
+			display: block;
+			@include dimension(100%, 360px);
+			//background:#123;
+			position: relative;
+			
+			.item_image {
+			
+				position:absolute;
+				top:0px; right:0px;
+			}
+			
+			.item_info {
+				display: block;
+				
+				.item_category {
+					display: block;
+					float: left;
+					font-size: 32px;
+					margin-top: 140px;
+					text-indent:60px;
+				}
+			}
+			
+			.product_node_hvr {
+				display: none;
+			}
+			
+			&:active {
+				//background-color:rgba(0, 0, 0, 0.45);
+			}
+			
+		}
+	}
+}
+
+
+/*---------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------- Product List Page ------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+
+#product_list_sec {
+	position: relative;
+	width: 640px;
+	display: block;
+	margin-top: 88px;
+	
+	.product_col2vert {
+		display: block;
+		@include dimension(100%, auto);
+		
+		.product_node {
+			display: block;
+			@include dimension(100%, 360px);
+			//background:#123;
+			position: relative;
+			border-bottom:2px #e5e5e5 solid;
+			overflow: hidden;
+			
+			.item_image {
+			
+				position:absolute;
+				top:0px; right:0px;
+			}
+			
+			.item_info {
+				display: block;
+				position:absolute;
+				bottom: 40px;
+				left: 0px;
+				
+				.item_cat {
+					color:#898989;
+					display: block;
+					float: left;
+					font-size: 32px;
+					text-indent:60px;
+					width:100%;
+				}
+				
+				.item_title {
+					color:#232323;
+					display: block;
+					float: left;
+					font-size: 32px;
+					text-indent:60px;
+					width:100%;
+				}
+			}
+			
+			.product_node_hvr {
+				display: none;
+			}
+			
+			&:active {
+				//background-color:rgba(0, 0, 0, 0.45);
+			}
+			
+		}
+	}
+}
+
+
+/*---------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------- Product View Page ---------------- MOBILE ONLY! ------*/
+/*---------------------------------------------------------------------------------------------------*/
+
+#product_view_mobile {
+	position: relative;
+	display: block;
+	width: 100%; 
+	background-color: #eeebe8;
+	
+	.slider_viewport {
+	margin-top: 88px;
+		width: 640px;
+		height: 480px;
+		display: block;
+		float: left;
+		left:0px;
+		
+		//.m-item {
+		//	margin: 0px !important;
+		//}
+		
+		.m-carousel-photos {
+			margin: 0px;
+			padding: 0px;
+		}
+		
+	}
+	
+	.pu_product_cntnt {
+		width: 100%;
+		display: block;
+		position:relative;
+		float: left;
+		overflow-x: hidden; 
+		height: auto;
+	}
+	.pu_close {
+		display: none;
+	}
+	
+}
+
+
+.info_c {
+	width: 640px;
+	display: block;
+	background-color: #eeebe8;
+	float: left;
+	top: 0px;
+	left: 0px;
+	padding-left: 40px;
+	padding-right: 40px;	
+	@include box-sizing(border-box);
+	
+	.item_info{
+		display:block;
+		text-align: left;
+		margin-top: 40px;
+		
+		
+		.item_cat{
+			color:#898989;
+			font-size:18px;
+			display: block;
+			width: 69%;
+			float: left;
+			
+			@media all and (max-height: 999px){
+				color:#898989;
+				font-size:16px;
+				display: block;
+			}
+		}
+		
+		.item_title{
+			color:#232323;
+			font-size:24px;
+			font-family:pn_semibold;
+			display: block;
+			width: 69%;
+			float: left;
+		}
+		
+		.item_color{
+			color:#898989;
+			font-size:18px;
+			display: block;
+			float: right;
+			
+			@media all and (max-height: 999px){
+				color:#898989;
+				font-size:16px;
+				display: block;
+			}
+		}
+		
+		.color_class {
+			float: right;
+			li {
+				display: inline-block;
+				@include dimension(20px, 20px);
+				border: 1px solid #9a9a9a;
+				border-radius: 4px;
+			}
+		}
+		
+		 .item_price{
+			color:#898989;
+			font-size:20px;
+			font-family:pn_semibold;
+			text-transform:uppercase;
+			display: block;
+			margin-top: 40px;
+			
+			@media all and (max-height: 999px){
+				color:#898989;
+				font-size:18px;
+				font-family:pn_semibold;
+				text-transform:uppercase;
+				display: block;
+				margin-top: 40px;
+			}
+		}
+		
+		.desc{
+			width: 100%;
+			font-size: 20px;
+			text-align: left;
+			color: #404040;
+			line-height: 1.5em;
+			margin-top: 30px;
+			
+			@media all and (max-height: 999px){
+				width: 232px;
+				font-size: 16px;
+				text-align: left;
+				color: #404040;
+				line-height: 1.5em;
+				margin-top: 30px;
+			}
+		}
+	}
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------- Blog Page ------------------------ MOBILE ONLY! ------*/
+/*---------------------------------------------------------------------------------------------------*/
+
+.blog_page_sec {
+	width: 640px;
+	position: relative;
+	display: block; 
+	
+	.blog_content {
+		margin-top: 88px;
+	
+		.news_cover_image {
+			height: 286px;
+			width: 100%;
+			display: block;
+			background: #232323;
+			overflow: hidden;
+			
+			background: url('../img/cover_news.jpg') no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+
+			
+			.title {
+				font-family: pn_semibold;
+				color: #fff;
+				margin-top: 104px;
+			}
+			.date {
+				font-size: 18px;
+				width: 100%;
+				text-align: center;
+				display: block;
+				color: #fff;
+				line-height: 36px;
+			}
+			
+		}
+		
+		
+	}
+	.news_content {
+		
+		p {
+			font-size: 1.5em !important;
+		}
+		
+		padding: 40px;
+		
+		img {
+			display: block;
+			padding:30px; 
+			margin-left: auto; 
+			margin-right: auto;
+			width: 500px;
+		}
+	}
+}
+
+.blog_list {
+	display: block;
+	float: left;
+	@include box-sizing(border-box);
+	width:512px;
+	
+	* {
+		text-indent: 0px !important;
+	}
+	
+	.list_node {
+		width: 100%;
+		height:100px;
+		@include box-sizing(border-box);
+		border-left: 2px solid #e5e5e5;
+		border-bottom: 2px solid #e5e5e5;
+		overflow: hidden;
+		display: block;
+		float: left;
+		
+		.title {
+			font-family: pn_semibold;
+			font-size: 1em !important;
+			line-height:30px;  
+			width: 100%;
+				margin-top: 25px;
+		}
+		
+		.date {
+			font-size: 14px;
+			width: 100%;
+			text-align: center;
+			display: block;
+		}
+		
+		&:hover {
+			* {
+				color:#fff;
+			}
+			
+			@include transition(0.20s);		
+			background: #676767;
+		}
+		
+		&:active {
+			@include transition(0.20s);
+			background: #232323;
+		}
+	}
+	
+	.current {
+		background: #232323;
+		* {
+			color: #fff;
+		}
+	}
+}
+
+}
