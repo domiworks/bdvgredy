@@ -35,7 +35,7 @@
 											<td>Nomer Pasien ke-<?php echo($i); ?></td>
 											<!--<td>Pakaian</td>
 											<td>Set atribut pakaian</td>-->
-											<td><a href="{{ URL::route('detail_pasien', array()) }}" class="btn btn-warning">View Detail</a></td>
+											<td><a href="" class="btn btn-warning">View Detail</a></td>
 										</tr>
 										  <?php
 										} 

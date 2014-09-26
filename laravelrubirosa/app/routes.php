@@ -68,6 +68,11 @@ Route::group(['prefix' => 'admingate'], function()
 		return View::make('pages.admin.dashboard');
 	});
 
+	Route::get('/detail_pasien', function()
+	{
+		return View::make('pages.admin.detail_pasien');
+	});
+
     /*
 		category
 	*/
