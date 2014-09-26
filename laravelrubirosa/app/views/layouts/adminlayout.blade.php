@@ -9,7 +9,7 @@
 			<span class="logo_admin"></span>
 			<img src="{{asset('assets/img/bpjs_white.png')}}" height="50" style="margin-left: 20px;">
 			<h3 style="color: #fff; margin-left:20px; display: inline-block">
-				Hey, Dokter
+				Hey, dokter {{Dokter::find(1)->nama}}
 			</h3>
 		</div>
 		<div class="admin_id">

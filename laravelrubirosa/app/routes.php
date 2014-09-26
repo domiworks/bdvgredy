@@ -27,7 +27,13 @@ Route::group(['prefix' => ''], function()
 //admin panel route sementara
 Route::group(['prefix' => 'admingate'], function()
 {
-	Route::get('', ['as' => '', 'uses' => 'ViewDokterController@view_index']);
+	
+	Route::get('/', ['as' => '', 'uses' => 'ViewDokterController@view_index']);
+	
+	
+	Route::get('/detail_pasien', ['as' => 'detail_pasien', 'uses' => 'ViewDokterController@view_index']);
+	
+	
 
 });
 

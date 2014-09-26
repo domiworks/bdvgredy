@@ -52,7 +52,6 @@ class CreateAuth extends Migration {
             $table->string('kota');
 			$table->date('tanggal_lahir');
             $table->string('foto')->nullable();
-            $table->string('spesialisasi');
 			
 			/*
 			

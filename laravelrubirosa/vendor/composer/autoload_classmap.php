@@ -1672,6 +1672,7 @@ return array(
     'Tipe_Jaskes' => $baseDir . '/app/models/Tipe_Jaskes.php',
     'Tipe_Kantor_BPJS' => $baseDir . '/app/models/Tipe_Kantor_BPJS.php',
     'Tunggu_Pasien' => $baseDir . '/app/models/Tunggu_Pasien.php',
+    'ViewDokterController' => $baseDir . '/app/controllers/Dokter/ViewDokterController.php',
     'Whoops\\Exception\\ErrorException' => $vendorDir . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
     'Whoops\\Exception\\Frame' => $vendorDir . '/filp/whoops/src/Whoops/Exception/Frame.php',
     'Whoops\\Exception\\FrameCollection' => $vendorDir . '/filp/whoops/src/Whoops/Exception/FrameCollection.php',

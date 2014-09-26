@@ -18,28 +18,37 @@
 									<thead>
 										<tr>
 											<th>Nama Pasien</th>
-											<th>No Pasien</th>
+											<th>No Kartu BPJS</th>
 											<!--<th>Tipe</th>
 											<th>Attribute Set</th>-->
 											<th>View Detail</th>
 										</tr>
 									</thead>
 									<tbody>
-										<?php 
-										for ($i=0; $i<=30; $i++) {
-										  ?>
-										<tr class="pop_up_trigger">
-										
-											<!-- <td><input type="checkbox"></td> -->
-											<td>Nama Orang ke-<?php echo($i); ?></td>
-											<td>Nomer Pasien ke-<?php echo($i); ?></td>
+										@if($list_pasien == NULL)
+											<tr class="pop_up_trigger">
+											<td>-</td>
+											<td>-</td>
 											<!--<td>Pakaian</td>
 											<td>Set atribut pakaian</td>-->
-											<td><a href="{{ URL::route('detail_pasien', array()) }}" class="btn btn-warning">View Detail</a></td>
-										</tr>
-										  <?php
-										} 
-										?>
+											<td></td>
+											</tr>
+										@else
+											@foreach($list_pasien as $pasien)
+												<tr class="pop_up_trigger">
+													<!-- <td><input type="checkbox"></td> -->
+													<td>{{Pasien::find($pasien->id_pasien)->nama}}</td>
+													<td>{{Pasien::find($pasien->id_pasien)->nomor_kartu}}</td>
+													<!--<td>Pakaian</td>
+													<td>Set atribut pakaian</td>-->
+													<td>
+														<a href="{{ URL::route('detail_pasien', array()) }}" class="btn btn-warning">View Detail</a>
+														<input type='hidden' value='{{Pasien::find($pasien->id_pasien)->id}}' />
+													</td>
+												</tr>
+											@endforeach
+										@endif
+										
 										
 									</tbody>
 								</table>
