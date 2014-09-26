@@ -6,6 +6,7 @@
  	{{ HTML::style( asset('/assets/css/all.css') ) }}
 	{{ HTML::script( asset('/assets/js/jquery-1.11.1.min.js') ) }}
 	{{ HTML::script(asset('/assets/js/jquery-migrate-1.2.1.min.js') ) }}
+	{{ HTML::script(asset('/assets/js/mbf.js') ) }}
 	{{ HTML::style( asset('/assets/js/jte/jquery-te-1.4.0.css') ) }}
 	{{ HTML::script( asset('/assets/js/jte/jquery-te-1.4.0.min.js') ) }}
 	
