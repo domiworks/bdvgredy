@@ -1685,25 +1685,25 @@ body {
 
 
 .header_admin {
-	height: 50px;
+	height: 70px;
 	overflow: hidden;
 	width: 100%;
 	display: block;
 }
 
 .admin_logo {
-	width: 240px;
+	width: 400px;
 	float: left;
 	display: block;
 	height: inherit;
-	background: #d4ac6e;
+	background: #b00300;
 }
 
 .admin_id {
 	float: left;
 	display: block;
 	height: inherit;
-	background: #1b1f22;
+	background: #b00300;
 	line-height: 50px;
 	color: #fff;
 	padding-left:20px;
@@ -1742,7 +1742,7 @@ body {
 	display: block;
 	float: left;
 	overflow-y: auto;
-	background: #1b1f22;
+	background: #282828;
 }
 
 .sidebar_admin ul {
@@ -1835,7 +1835,7 @@ transform:rotate(90deg);
 
 .admin_control_panel {
 	display: block;
-	float: left;
+	/*float: left;*/
 	overflow-y: auto;
 	background: #fff; 
 

@@ -1814,7 +1814,7 @@ body {
 -------------------------------------------------------------------------------------------------------------*/
 /* line 1687, E:/xampp/htdocs/bpjs_siaga/public_html/rubirosagoods.com/assets/css/main.scss */
 .header_admin {
-  height: 50px;
+  height: 70px;
   overflow: hidden;
   width: 100%;
   display: block;
@@ -1822,11 +1822,11 @@ body {
 
 /* line 1694, E:/xampp/htdocs/bpjs_siaga/public_html/rubirosagoods.com/assets/css/main.scss */
 .admin_logo {
-  width: 240px;
+  width: 400px;
   float: left;
   display: block;
   height: inherit;
-  background: #d4ac6e;
+  background: #b00300;
 }
 
 /* line 1702, E:/xampp/htdocs/bpjs_siaga/public_html/rubirosagoods.com/assets/css/main.scss */
@@ -1834,7 +1834,7 @@ body {
   float: left;
   display: block;
   height: inherit;
-  background: #1b1f22;
+  background: #b00300;
   line-height: 50px;
   color: #fff;
   padding-left: 20px;
@@ -1879,7 +1879,7 @@ body {
   display: block;
   float: left;
   overflow-y: auto;
-  background: #1b1f22;
+  background: #282828;
 }
 
 /* line 1748, E:/xampp/htdocs/bpjs_siaga/public_html/rubirosagoods.com/assets/css/main.scss */
@@ -1982,7 +1982,7 @@ li:hover ._kontak_tombol:before {
 /* line 1836, E:/xampp/htdocs/bpjs_siaga/public_html/rubirosagoods.com/assets/css/main.scss */
 .admin_control_panel {
   display: block;
-  float: left;
+  /*float: left;*/
   overflow-y: auto;
   background: #fff;
 }
