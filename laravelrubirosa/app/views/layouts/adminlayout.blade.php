@@ -7,9 +7,10 @@
 	<section class="header_admin">
 		<div class="admin_logo">
 			<span class="logo_admin"></span>
-			<p>
-				logo rubirosa
-			</p>
+			<img src="{{asset('assets/img/bpjs_white.png')}}" height="50" style="margin-left: 20px;">
+			<h3 style="color: #fff; margin-left:20px; display: inline-block">
+				Hey, Dokter
+			</h3>
 		</div>
 		<div class="admin_id">
 			<a href="javascript:void(0)">
@@ -18,12 +19,12 @@
 		</div>
     </section>
 	<section class="admin_content_container">
-		@include('includes.sidebar_admin')
-		<div class="admin_control_panel">
+		{{-- @include('includes.sidebar_admin') --}}
+		<!-- <div class="admin_control_panel"> -->
 		
 			@yield('content')
 		
-		</div>		
+		<!-- </div> -->		
 	</section>
 
 	
