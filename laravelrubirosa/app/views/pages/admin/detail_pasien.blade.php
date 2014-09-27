@@ -34,6 +34,45 @@
 						</div>
 						
 						<div class="form-group">
+							<label class="g-sm-3 control-label">Alamat Pasien</label>
+							<div class="g-sm-6">
+								<!-- <input type="text" class="form-control"> -->
+								Jl. Muhammad Naufal Ashidiq Wangsaatmadja No. 999
+							</div>
+							<div class="g-sm-3">
+								<span class="btn btn-danger">
+									Warning ini gak usah dibuat gred
+								</span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="g-sm-3 control-label">Tanggal Lahir</label>
+							<div class="g-sm-6">
+								<!-- <input type="text" class="form-control"> -->
+								11 Agustus 1990
+							</div>
+							<div class="g-sm-3">
+								<span class="btn btn-danger">
+									Warning ini gak usah dibuat gred
+								</span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="g-sm-3 control-label">Umur</label>
+							<div class="g-sm-6">
+								<!-- <input type="text" class="form-control"> -->
+								37
+							</div>
+							<div class="g-sm-3">
+								<span class="btn btn-danger">
+									Warning ini gak usah dibuat gred
+								</span>
+							</div>
+						</div>
+						
+						<div class="form-group">
 							<label class="g-sm-3 control-label">Nomer BPJS</label>
 							<div class="g-sm-6">
 								<!-- <input type="text" class="form-control"> -->
@@ -63,7 +102,22 @@
 							</div>
 						</div>
 						
+						<div class="form-group">
+							<label class="g-sm-3 control-label">Rekam Medis</label>
+							<div class="g-sm-6">
+								<!-- <input type="text" class="form-control"> -->
+								<p>
+									rtyuio fghj dfghjdfghj dfghjfghj
+								</p>
+							</div>
+							<div class="g-sm-3">
+								<span class="btn btn-danger">
+									Warning ini gak usah dibuat gred
+								</span>
+							</div>
+						</div>
 						
+						<!--
 						<div class="form-group">
 							<label for="inputPassword3" class="g-sm-3 control-label">Visibility *</label>
 							<div class="g-sm-6">
@@ -78,7 +132,7 @@
 									Maaf form harus diisi
 								</span>
 							</div>
-						</div>
+						</div>-->
 						
 						<div class="form-group">
 							<div class=" g-sm-3 g-sm-push-3">
