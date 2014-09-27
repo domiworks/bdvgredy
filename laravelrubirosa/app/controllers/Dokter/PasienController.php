@@ -5,7 +5,6 @@ use Carbon\Carbon;
 class PasienController extends BaseController {
 	
 	
-	
 	function get_all_jaskes(){
 		$jaskeses = Jaskes::all();
 		return $jaskeses;

@@ -24,7 +24,7 @@
 							<label class="g-sm-3 control-label">Nama Pasien</label>
 							<div class="g-sm-6">
 								<!-- <input type="text" class="form-control"> -->
-								Muhammad Naufal Ashidiq Wangsaatmadja 
+								{{$data_pasien->nama}}
 							</div>
 							<div class="g-sm-3">
 								<span class="btn btn-danger">
@@ -37,7 +37,7 @@
 							<label class="g-sm-3 control-label">Alamat Pasien</label>
 							<div class="g-sm-6">
 								<!-- <input type="text" class="form-control"> -->
-								Jl. Muhammad Naufal Ashidiq Wangsaatmadja No. 999
+								{{$data_pasien->jalan}}
 							</div>
 							<div class="g-sm-3">
 								<span class="btn btn-danger">
@@ -50,7 +50,7 @@
 							<label class="g-sm-3 control-label">Tanggal Lahir</label>
 							<div class="g-sm-6">
 								<!-- <input type="text" class="form-control"> -->
-								11 Agustus 1990
+								{{$data_pasien->tanggal_lahir}}
 							</div>
 							<div class="g-sm-3">
 								<span class="btn btn-danger">
@@ -63,7 +63,8 @@
 							<label class="g-sm-3 control-label">Umur</label>
 							<div class="g-sm-6">
 								<!-- <input type="text" class="form-control"> -->
-								37
+									{{date("Y")-explode('-',$data_pasien->tanggal_lahir)[0]}}
+
 							</div>
 							<div class="g-sm-3">
 								<span class="btn btn-danger">
@@ -76,7 +77,7 @@
 							<label class="g-sm-3 control-label">Nomer BPJS</label>
 							<div class="g-sm-6">
 								<!-- <input type="text" class="form-control"> -->
-									45678 45678 567
+									{{$data_pasien->nomor_kartu}}
 							</div>
 							<div class="g-sm-3">
 								<span class="btn btn-danger">
@@ -86,13 +87,17 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="g-sm-3 control-label">Daftar ALergi</label>
+							<label class="g-sm-3 control-label">Daftar Alergi</label>
 							<div class="g-sm-6">
 								<!-- <input type="text" class="form-control"> -->
 								<ul>
-									<li>Alergi Kucing</li>
-									<li>Alergi Debu</li>
-									<li>Alergi Makanan Laut</li>
+									@if($alergi!= NULL)
+										@foreach($alergi as $alg)
+											<li>$alg->alergi</li>
+										@endforeach
+									@else
+										<li>-</li>
+									@endif
 								</ul>
 							</div>
 							<div class="g-sm-3">
@@ -106,9 +111,15 @@
 							<label class="g-sm-3 control-label">Rekam Medis</label>
 							<div class="g-sm-6">
 								<!-- <input type="text" class="form-control"> -->
-								<p>
-									rtyuio fghj dfghjdfghj dfghjfghj
-								</p>
+								<ul>
+									@if($alergi!= NULL)
+										@foreach($rekam_medis as $rekam)
+											<li>$rekam->diagnosis</li>
+										@endforeach
+									@else
+										<li>-</li>
+									@endif
+								</ul>
 							</div>
 							<div class="g-sm-3">
 								<span class="btn btn-danger">
