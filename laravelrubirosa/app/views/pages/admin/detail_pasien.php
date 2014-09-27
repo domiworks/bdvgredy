@@ -7,47 +7,88 @@
 		<div class="g-lg-12">
 			
 			<div class="panel panel-default">
-								<div class="panel-heading">
-									<h3 class="panel-title">General</h3>
-								</div>
-								<div class="panel-body">
-								
-									<div class="g-lg-12">
+				<div class="panel-heading">
+					<h3 class="panel-title">Data Pasien</h3>
+				</div>
+				<div class="panel-body">
+					
 			
-			<table class="table table-striped table-hover ">
-									<thead>
-										<tr>
-											<th>Nama Pasien</th>
-											<th>No Pasien</th>
-											<!--<th>Tipe</th>
-											<th>Attribute Set</th>-->
-											<th>View Detail</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php 
-										for ($i=0; $i<=30; $i++) {
-										  ?>
-										<tr class="pop_up_trigger">
-										
-											<!-- <td><input type="checkbox"></td> -->
-											<td>Nama Orang ke-<?php echo($i); ?></td>
-											<td>Nomer Pasien ke-<?php echo($i); ?></td>
-											<!--<td>Pakaian</td>
-											<td>Set atribut pakaian</td>-->
-											<td><a href="" class="btn btn-warning">View Detail</a></td>
-										</tr>
-										  <?php
-										} 
-										?>
-										
-									</tbody>
-								</table>
+						
+					<form class="form-horizontal" role="form">
+					
+						<img src="" alt="" class="img-thumbnail" width="300">
+						
+						<span class="clear-fix"></span>
+						
+						<div class="form-group">
+							<label class="g-sm-3 control-label">Nama Pasien</label>
+							<div class="g-sm-6">
+								<!-- <input type="text" class="form-control"> -->
+								Muhammad Naufal Ashidiq Wangsaatmadja 
+							</div>
+							<div class="g-sm-3">
+								<span class="btn btn-danger">
+									Warning ini gak usah dibuat gred
+								</span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="g-sm-3 control-label">Nomer BPJS</label>
+							<div class="g-sm-6">
+								<!-- <input type="text" class="form-control"> -->
+									45678 45678 567
+							</div>
+							<div class="g-sm-3">
+								<span class="btn btn-danger">
+									Warning ini gak usah dibuat gred
+								</span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="g-sm-3 control-label">Daftar ALergi</label>
+							<div class="g-sm-6">
+								<!-- <input type="text" class="form-control"> -->
+								<ul>
+									<li>Alergi Kucing</li>
+									<li>Alergi Debu</li>
+									<li>Alergi Makanan Laut</li>
+								</ul>
+							</div>
+							<div class="g-sm-3">
+								<span class="btn btn-danger">
+									Warning ini gak usah dibuat gred
+								</span>
+							</div>
+						</div>
+						
+						
+						<div class="form-group">
+							<label for="inputPassword3" class="g-sm-3 control-label">Visibility *</label>
+							<div class="g-sm-6">
+								<select class="form-control">
+									<option value="one">Catalog</option>
+									<option value="two">Search</option>
+									<option value="two">Catalog, Search</option>
+								</select>
+							</div>
+							<div class="g-sm-3">
+								<span class="btn btn-danger">
+									Maaf form harus diisi
+								</span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class=" g-sm-3 g-sm-push-3">
+								<button type="submit" class="btn btn-warning">Lanjutkan</button>
+							</div>
+						</div>
+					</form>		
 			
-			
-		</div>
-		</div>
-		</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	
