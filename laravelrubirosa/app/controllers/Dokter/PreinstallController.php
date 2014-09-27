@@ -9,9 +9,237 @@ class PreinstallController extends BaseController {
 		$this->instalTipeKantorBPJS();
 		$this->instalJaskes();
 		$this->instalKantorBPJS();
+		
+		//------------------ INSERT ------------------
+		
+		//insert auth
+		DB::table('auth')->insert(
+			array(
+				'username' => 'dokter1',
+				'password' => 'dokter1',
+				'role' => 2,
+				'aktif' => 1
+			)
+		);
+		DB::table('auth')->insert(
+			array(
+				'username' => 'pasien1',
+				'password' => 'pasien1',
+				'role' => 1,
+				'aktif' => 1
+			)
+		);
+		DB::table('auth')->insert(
+			array(
+				'username' => 'pasien2',
+				'password' => 'pasien2',
+				'role' => 1,
+				'aktif' => 1
+			)
+		);
+		DB::table('auth')->insert(
+			array(
+				'username' => 'pasien3',
+				'password' => 'pasien3',
+				'role' => 1,
+				'aktif' => 1
+			)
+		);
+		
+		//insert dokter
+		DB::table('dokter')->insert(
+			array(
+				'user_id' => 1,
+				'nama' => 'nama dokter1',
+				'spesialisasi' => 'spesialisasi dokter1'
+			)
+		);
+		
+		//insert pasien
+		DB::table('pasien')->insert(
+			array(
+				'user_id' => 2,
+				'nomor_kartu' => 'nomor_kartu pasien1',
+				'nama' => 'nama pasien1',
+				'jalan' => 'jalan pasien1',
+				'kota' => 'kota pasien1',
+				'tanggal_lahir' => '2014-09-15'				
+			)
+		);
+		DB::table('pasien')->insert(
+			array(
+				'user_id' => 3,
+				'nomor_kartu' => 'nomor_kartu pasien2',
+				'nama' => 'nama pasien2',
+				'jalan' => 'jalan pasien2',
+				'kota' => 'kota pasien2',
+				'tanggal_lahir' => '2014-09-15'				
+			)
+		);
+		DB::table('pasien')->insert(
+			array(
+				'user_id' => 4,
+				'nomor_kartu' => 'nomor_kartu pasien3',
+				'nama' => 'nama pasien3',
+				'jalan' => 'jalan pasien3',
+				'kota' => 'kota pasien3',
+				'tanggal_lahir' => '2014-09-15'				
+			)
+		);
+		
+		//insert rekam_medis
+		DB::table('rekam_medis')->insert(
+			array(
+				'tanggal' => '2014-09-15',
+				'id_dokter' => 1,
+				'id_pasien' => 1,
+				'diagnosis' => 'diagnosis pasien1 oleh dokter1'
+			)
+		);
+		DB::table('rekam_medis')->insert(
+			array(
+				'tanggal' => '2014-09-15',
+				'id_dokter' => 1,
+				'id_pasien' => 2,
+				'diagnosis' => 'diagnosis pasien2 oleh dokter1'
+			)
+		);
+		DB::table('rekam_medis')->insert(
+			array(
+				'tanggal' => '2014-09-15',
+				'id_dokter' => 1,
+				'id_pasien' => 3,
+				'diagnosis' => 'diagnosis pasien3 oleh dokter1'
+			)
+		);
+		
+		//insert daftar_obat
+		DB::table('daftar_obat')->insert(
+			array(
+				'id_kunjungan' => '1',
+				'nama' => 'obat untuk pasien1'
+			)
+		);
+		DB::table('daftar_obat')->insert(
+			array(
+				'id_kunjungan' => '2',
+				'nama' => 'obat untuk pasien2'
+			)
+		);
+		DB::table('daftar_obat')->insert(
+			array(
+				'id_kunjungan' => '3',
+				'nama' => 'obat untuk pasien3'
+			)
+		);
+		
+		//insert alergi
+		DB::table('alergi')->insert(
+			array(
+				'id_pasien' => 1,
+				'alergi' => 'alergi pasien1'
+			)
+		);
+		DB::table('alergi')->insert(
+			array(
+				'id_pasien' => 2,
+				'alergi' => 'alergi pasien2'
+			)
+		);
+		DB::table('alergi')->insert(
+			array(
+				'id_pasien' => 3,
+				'alergi' => 'alergi pasien3'
+			)
+		);
+		
+		//insert tunggu_pasien
+		DB::table('tunggu_pasien')->insert(
+			array(
+				'id_dokter' => 1,
+				'id_pasien' => 1,
+				'id_jaskes' => 1,
+				'tanggal' => '2014-09-15',
+				'jam' => '12:12:12',
+				'nomor_antrian' => '1'
+			)
+		);
+		DB::table('tunggu_pasien')->insert(
+			array(
+				'id_dokter' => 1,
+				'id_pasien' => 2,
+				'id_jaskes' => 1,
+				'tanggal' => '2014-09-15',
+				'jam' => '12:12:12',
+				'nomor_antrian' => '2'
+			)
+		);
+		DB::table('tunggu_pasien')->insert(
+			array(
+				'id_dokter' => 1,
+				'id_pasien' => 3,
+				'id_jaskes' => 1,
+				'tanggal' => '2014-09-15',
+				'jam' => '12:12:12',
+				'nomor_antrian' => '3'
+			)
+		);
+		
+		//insert jadwal_jaga
+		DB::table('jadwal_jaga')->insert(
+			array(
+				'id_dokter' => 1,
+				'id_fasilitas' => 1,
+				'hari' => 'senin',
+				'jam_mulai' => '01:01:01',
+				'jam_selesai' => '02:02:02'
+			)
+		);
+		
+		//insert review
+		DB::table('review')->insert(
+			array(
+				'id_pasien' => 1,
+				'id_fasilitas' => 1,
+				'rating' => 1,
+				'review' => 'review dari pasien1'
+			)
+		);
+		DB::table('review')->insert(
+			array(
+				'id_pasien' => 2,
+				'id_fasilitas' => 1,
+				'rating' => 2,
+				'review' => 'review dari pasien2'
+			)
+		);
+		DB::table('review')->insert(
+			array(
+				'id_pasien' => 3,
+				'id_fasilitas' => 1,
+				'rating' => 3,
+				'review' => 'review dari pasien3'
+			)
+		);
+		
+		//insert taxi
+		DB::table('taxi')->insert(
+			array(
+				'nama' => 'nama taxi1',
+				'telepon' => 'telepon taxi1'
+			)
+		);
+		DB::table('taxi')->insert(
+			array(
+				'nama' => 'nama taxi2',
+				'telepon' => 'telepon taxi2'
+			)
+		);
+	
+		
 		return "Finish";
 	}
-	
+		
 	public function instalTipeFaskes(){
 		$file_handle = fopen("assets/file_csv/BPJS/BPJS.faskes.type.csv","r");
 		while (!feof($file_handle) ) {
