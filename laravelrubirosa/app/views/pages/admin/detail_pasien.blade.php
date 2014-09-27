@@ -16,7 +16,7 @@
 						
 					<form class="form-horizontal" role="form">
 					
-						<img src="" alt="" class="img-thumbnail" width="300">
+						<img src="{{asset($data_pasien->foto)}}" alt="" class="img-thumbnail" width="300">
 						
 						<span class="clear-fix"></span>
 						
@@ -27,9 +27,7 @@
 								{{$data_pasien->nama}}
 							</div>
 							<div class="g-sm-3">
-								<span class="btn btn-danger">
-									Warning ini gak usah dibuat gred
-								</span>
+								
 							</div>
 						</div>
 						
@@ -40,9 +38,7 @@
 								{{$data_pasien->jalan}}
 							</div>
 							<div class="g-sm-3">
-								<span class="btn btn-danger">
-									Warning ini gak usah dibuat gred
-								</span>
+								
 							</div>
 						</div>
 						
@@ -53,9 +49,7 @@
 								{{$data_pasien->tanggal_lahir}}
 							</div>
 							<div class="g-sm-3">
-								<span class="btn btn-danger">
-									Warning ini gak usah dibuat gred
-								</span>
+								
 							</div>
 						</div>
 						
@@ -67,9 +61,7 @@
 
 							</div>
 							<div class="g-sm-3">
-								<span class="btn btn-danger">
-									Warning ini gak usah dibuat gred
-								</span>
+								
 							</div>
 						</div>
 						
@@ -80,9 +72,7 @@
 									{{$data_pasien->nomor_kartu}}
 							</div>
 							<div class="g-sm-3">
-								<span class="btn btn-danger">
-									Warning ini gak usah dibuat gred
-								</span>
+								
 							</div>
 						</div>
 						
@@ -93,7 +83,7 @@
 								<ul>
 									@if($alergi!= NULL)
 										@foreach($alergi as $alg)
-											<li>$alg->alergi</li>
+											<li>{{$alg->alergi}}</li>
 										@endforeach
 									@else
 										<li>-</li>
@@ -101,9 +91,7 @@
 								</ul>
 							</div>
 							<div class="g-sm-3">
-								<span class="btn btn-danger">
-									Warning ini gak usah dibuat gred
-								</span>
+								
 							</div>
 						</div>
 						
@@ -112,9 +100,9 @@
 							<div class="g-sm-6">
 								<!-- <input type="text" class="form-control"> -->
 								<ul>
-									@if($alergi!= NULL) 
+									@if($alergi!= NULL)
 										@foreach($rekam_medis as $rekam)
-											<li>$rekam->diagnosis</li>
+											<li>{{$rekam->diagnosis}}</li>
 										@endforeach
 									@else
 										<li>-</li>
@@ -122,9 +110,7 @@
 								</ul>
 							</div>
 							<div class="g-sm-3">
-								<span class="btn btn-danger">
-									Warning ini gak usah dibuat gred
-								</span>
+								
 							</div>
 						</div>
 						
@@ -147,7 +133,7 @@
 						
 						<div class="form-group">
 							<div class=" g-sm-3 g-sm-push-3">
-								<button type="submit" class="btn btn-warning">Lanjutkan</button>
+								<a href='../form_pemeriksaan' class="btn btn-warning">Lanjutkan</a>
 							</div>
 						</div>
 					</form>		

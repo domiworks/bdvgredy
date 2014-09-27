@@ -42,8 +42,8 @@
 													<!--<td>Pakaian</td>
 													<td>Set atribut pakaian</td>-->
 													<td>
-														<a href="{{ URL::route('detail_pasien', array()) }}" class="btn btn-warning">View Detail</a>
-														<input type='hidden' value='{{Pasien::find($pasien->id_pasien)->id}}' />
+														<a href="detail_pasien/1" class="btn btn-warning">View Detail</a>
+														<input type='hidden' value='' />
 													</td>
 												</tr>
 											@endforeach

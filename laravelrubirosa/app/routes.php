@@ -54,7 +54,10 @@ Route::group(['prefix' => 'admingate'], function()
 	Route::get('/', ['as' => '', 'uses' => 'ViewDokterController@view_index']);
 	
 	
-	Route::get('/detail_pasien/{id_pasien}', ['as' => 'detail_pasien.{id_pasien}', 'uses' => 'ViewDokterController@view_detail_pasien']);
+	Route::get('/detail_pasien/{id_pasien}', ['as' => 'admingate.detail_pasien.{id_pasien}', 'uses' => 'ViewDokterController@view_detail_pasien']);
+	Route::get('/form_pemeriksaan', ['uses' => 'ViewDokterController@view_form_pemeriksaan']);
+	
+	Route::post('/add_rekam', ['uses' => 'ViewDokterController@set_rekam_medis']);
 	
 	
 
