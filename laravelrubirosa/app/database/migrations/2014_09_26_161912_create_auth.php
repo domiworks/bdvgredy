@@ -30,7 +30,7 @@ class CreateAuth extends Migration {
 			
 			/*
 			
-				Foreign
+				Foreign				
 			
 			*/
 			$table->foreign('user_id')->references('id')->on('auth');
@@ -286,6 +286,8 @@ class CreateAuth extends Migration {
             $table->string('nama');
             $table->string('telepon');
         });
+		
+				
 	}
 
 	/**
