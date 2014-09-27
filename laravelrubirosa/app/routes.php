@@ -37,7 +37,9 @@ Route::group(['prefix' => ''], function()
 	
 	Route::get('/get_all_rekam/{id_pasien}', ['as' => 'get_all_rekam.{id_pasien}', 'uses' => 'PasienController@get_all_rekam_medis']);
 	
-	Route::get('/get_all_dokter_di/{id_fasilitas}', ['as' => 'get_all_dokter_di.{id_fasilitas}', 'uses' => 'PasienController@get_all_dokter_di_jakes']);
+	Route::get('/get_all_dokter_di/{id_fasilitas}', ['as' => 'get_all_dokter_di.{id_fasilitas}', 'uses' => 'JadwalDokterController@get_all_dokter_di_jakes']);
+	
+	Route::get('/get_antrian/{id_dokter}', ['as' => 'get_antrian.{id_dokter}', 'uses' => 'JadwalDokterController@get_antrian']);
 	
 	
 	

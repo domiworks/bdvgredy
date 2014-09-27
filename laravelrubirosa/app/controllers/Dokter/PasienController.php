@@ -64,15 +64,7 @@ class PasienController extends BaseController {
 		}
 	}
 	
-	function get_all_dokter_di_jakes($id_fasilitas){
-		$dokters = Jadwal_Jaga::where('id_fasilitas','=',$id_fasilitas)->get();
-		if(count($dokters) == 0){
-			return "Kosong";
-		}
-		else{
-			return $dokters;
-		}
-	}
+
 	
 	
 	
