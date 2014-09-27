@@ -42,7 +42,7 @@
 													<!--<td>Pakaian</td>
 													<td>Set atribut pakaian</td>-->
 													<td>
-														<a href="detail_pasien/1" class="btn btn-warning">View Detail</a>
+														<a href="admingate/detail_pasien/1" class="btn btn-warning">View Detail</a>
 														<input type='hidden' value='' />
 													</td>
 												</tr>

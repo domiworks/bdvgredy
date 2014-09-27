@@ -92,7 +92,7 @@ class ViewDokterController extends BaseController {
 			}
 		}
 		
-		return $this->view_index();
+		return Redirect::to('admingate');
 	}
 	
 	
