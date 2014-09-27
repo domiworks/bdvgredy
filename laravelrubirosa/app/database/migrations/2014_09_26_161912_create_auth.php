@@ -178,6 +178,8 @@ class CreateAuth extends Migration {
             $table->integer('id_jaskes')->unsigned();
 			$table->date('tanggal');
 			$table->time('jam');
+			$table->integer('nomor_antrian');
+			$table->tinyInteger('selesai')->default(0);
 			
 			/*
 			
