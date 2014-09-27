@@ -67,24 +67,29 @@ class ViewDokterController extends BaseController {
 		$diagnosa = Input::get('diagnosa');
 		$obats = Input::get('obat');
 		foreach($alergies as $alergi){
-			$alg = new Alergi();
-			$alg->id_pasien = $id_pasien;
-			$alg->alergi = $alergi;
-			$alg->save();
+			if($alergi!=""){
+				$alg = new Alergi();
+				$alg->id_pasien = $id_pasien;
+				$alg->alergi = $alergi;
+				$alg->save();
+			}
+		}
+		if($diagnosa!=""){
+			$rekam = new Rekam_Medis();
+			$rekam -> tanggal = Carbon::now();
+			$rekam ->id_dokter = $id_dokter;
+			$rekam ->id_pasien = $id_pasien;
+			$rekam ->diagnosis = $diagnosa;
+			$rekam ->save();
 		}
 		
-		$rekam = new Rekam_Medis();
-		$rekam -> tanggal = Carbon::now();
-		$rekam ->id_dokter = $id_dokter;
-		$rekam ->id_pasien = $id_pasien;
-		$rekam ->diagnosis = $diagnosa;
-		$rekam ->save();
-		
 		foreach($obats as $obat){
-			$obt = new Daftar_Obat();
-			$obt->id_kunjungan = $rekam->id;
-			$obt->nama = $obat;
-			$obt->save();
+			if($obat!=""){
+				$obt = new Daftar_Obat();
+				$obt->id_kunjungan = $rekam->id;
+				$obt->nama = $obat;
+				$obt->save();
+			}
 		}
 		
 		return $this->view_index();
