@@ -154,6 +154,7 @@ class CreateAuth extends Migration {
 			$table->string('long')->nullable();
 			$table->string('lat')->nullable();
 			$table->tinyInteger('ugd')->nullable();
+			$table->string('foto')->nullable();
 			
 			
 			/*
