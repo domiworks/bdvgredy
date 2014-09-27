@@ -112,7 +112,7 @@
 							<div class="g-sm-6">
 								<!-- <input type="text" class="form-control"> -->
 								<ul>
-									@if($alergi!= NULL)
+									@if($alergi!= NULL) 
 										@foreach($rekam_medis as $rekam)
 											<li>$rekam->diagnosis</li>
 										@endforeach
